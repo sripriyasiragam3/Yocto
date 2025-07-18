@@ -1,33 +1,44 @@
-*.pyc
-*.pyo
-/*.patch
-/.repo/
-/build*/
-pyshtables.py
+# Ignore build artifacts and caches
+build/
+tmp/
+downloads/
+sstate-cache/
+cache/
 pstage/
-scripts/oe-git-proxy-socks
-sources/
-meta-*/
 buildtools/
-!meta-skeleton
-!meta-selftest
-hob-image-*.bb
+*.log
 *.swp
 *.orig
 *.rej
 *~
+*.pyc
+*.pyo
+ 
+# Ignore user/editor-specific files
+*.swp
+*.swo
+*.bak
+*.tmp
+ 
+# Ignore Toaster and Eclipse generated docs
+/documentation/
+/bitbake/doc/bitbake-user-manual/*.pdf
+/bitbake/doc/bitbake-user-manual/*.html
+/bitbake/doc/bitbake-user-manual/*.tgz
+ 
+# Don't ignore important meta layers
+!meta-raspberrypi
+!meta-openembedded
 !meta-poky
 !meta-yocto
 !meta-yocto-bsp
-!meta-yocto-imported
-/documentation/*/eclipse/
-/documentation/*/*.html
-/documentation/*/*.pdf
-/documentation/*/*.tgz
-/bitbake/doc/bitbake-user-manual/bitbake-user-manual.html
-/bitbake/doc/bitbake-user-manual/bitbake-user-manual.pdf
-/bitbake/doc/bitbake-user-manual/bitbake-user-manual.tgz
-pull-*/
-bitbake/lib/toaster/contrib/tts/backlog.txt
-bitbake/lib/toaster/contrib/tts/log/*
-bitbake/lib/toaster/contrib/tts/.cache/*
+!meta-custom
+ 
+# Allow these if using skeleton or selftest layers
+!meta-skeleton
+!meta-selftest
+ 
+# Repo/patch cleanup
+/.repo/
+/*.patch
+ 
